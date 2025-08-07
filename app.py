@@ -1,11 +1,10 @@
 import pandas as pd
 import numpy as np
-import joblib  # ✅ joblib for model loading
+import joblib  
 import streamlit as st
 import os
-
-# Load the trained model
-model = joblib.load('oxoxgcarmodel.pkl')  # ✅ Use joblib here
+import joblib
+model = joblib.load('oxoxgcarmodel.pkl')
 
 st.title('🚗 Car Price Prediction ML App')
 
@@ -67,3 +66,4 @@ if st.button("Predict Price"):
     # Predict and display
     prediction = model.predict(input_df)
     st.success(f"💰 Estimated Car Price: ₹ {prediction[0]:,.2f}")
+
